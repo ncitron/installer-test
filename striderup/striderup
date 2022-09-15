@@ -4,7 +4,7 @@ set -e
 # modified from https://github.com/foundry-rs/foundry/blob/master/foundryup/foundryup
 
 REPO="ncitron/installer-test"
-NAME=lightclient
+NAME=strider
 
 DIR=$HOME/.$NAME
 BIN_DIR=$DIR/bin
@@ -49,7 +49,7 @@ fi
 echo $PLATFORM
 echo $ARCHITECTURE
 
-TARBALL_URL="https://github.com/$REPO/releases/download/${TAG}/lightclient_${PLATFORM}_${ARCHITECTURE}.tar.gz"
+TARBALL_URL="https://github.com/$REPO/releases/download/${TAG}/${NAME}_${PLATFORM}_${ARCHITECTURE}.tar.gz"
 echo $TARBALL_URL
 
 curl -L $TARBALL_URL | tar -xzC $BIN_DIR

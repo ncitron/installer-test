@@ -4,7 +4,7 @@ set -e
 # modified from https://github.com/foundry-rs/foundry/blob/master/foundryup/install
 
 REPO="ncitron/installer-test"
-NAME=lightclient
+NAME=strider
 INSTALLER_NAME=${NAME}up
 
 DIR=$HOME/.$NAME
