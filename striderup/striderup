@@ -9,15 +9,10 @@ NAME=strider
 DIR=$HOME/.$NAME
 BIN_DIR=$DIR/bin
 
-echo $DIR
-echo $BIN_DIR
-
 # delete existing binaries
 rm -f $BIN_DIR/$NAME
 
 TAG=$(curl https://api.github.com/repos/$REPO/releases/latest | grep -o '"tag_name": "[^"]*' | grep -o '[^"]*$')
-
-echo $TAG
 
 PLATFORM="$(uname -s)"
 case $PLATFORM in
@@ -46,10 +41,7 @@ else
   ARCHITECTURE="amd64" # Amd.
 fi
 
-echo $PLATFORM
-echo $ARCHITECTURE
-
 TARBALL_URL="https://github.com/$REPO/releases/download/${TAG}/${NAME}_${PLATFORM}_${ARCHITECTURE}.tar.gz"
-echo $TARBALL_URL
-
 curl -L $TARBALL_URL | tar -xzC $BIN_DIR
+
+echo "Installed $NAME" 
